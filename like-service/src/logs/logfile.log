@@ -1,0 +1,22 @@
+2022-03-22 17:26:20.173  INFO 25512 --- [restartedMain] c.e.likeservice.LikeServiceApplication   : Starting LikeServiceApplication using Java 17.0.2 on MAVBNG112127 with PID 25512 (C:\Users\anoopc\Downloads\like-service (2)\like-service\target\classes started by anoopc in C:\Users\anoopc\Downloads\like-service (2))
+2022-03-22 17:26:20.175  INFO 25512 --- [restartedMain] c.e.likeservice.LikeServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-03-22 17:26:20.224  INFO 25512 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-22 17:26:20.224  INFO 25512 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-22 17:26:20.674  INFO 25512 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-22 17:26:20.708  INFO 25512 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 MongoDB repository interfaces.
+2022-03-22 17:26:21.182  INFO 25512 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3020 (http)
+2022-03-22 17:26:21.193  INFO 25512 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-22 17:26:21.193  INFO 25512 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-22 17:26:21.245  INFO 25512 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-22 17:26:21.246  INFO 25512 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1014 ms
+2022-03-22 17:26:21.362  INFO 25512 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-22 17:26:21.412  INFO 25512 --- [cluster-ClusterId{value='6239b96592d3073150a104d0', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:131}] to localhost:27017
+2022-03-22 17:26:21.412  INFO 25512 --- [cluster-rtt-ClusterId{value='6239b96592d3073150a104d0', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:130}] to localhost:27017
+2022-03-22 17:26:21.412  INFO 25512 --- [cluster-ClusterId{value='6239b96592d3073150a104d0', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=16405001}
+2022-03-22 17:26:21.564  INFO 25512 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-22 17:26:21.925  INFO 25512 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3020 (http) with context path ''
+2022-03-22 17:26:21.933  INFO 25512 --- [restartedMain] c.e.likeservice.LikeServiceApplication   : Started LikeServiceApplication in 2.158 seconds (JVM running for 2.533)
+2022-03-22 17:28:59.625  INFO 25512 --- [http-nio-3020-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-22 17:28:59.626  INFO 25512 --- [http-nio-3020-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-22 17:28:59.628  INFO 25512 --- [http-nio-3020-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-03-22 17:28:59.794  INFO 25512 --- [http-nio-3020-exec-2] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:132}] to localhost:27017
