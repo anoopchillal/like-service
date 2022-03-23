@@ -3,8 +3,11 @@ package com.example.likeservice.service;
 import com.example.likeservice.entity.Like;
 import com.example.likeservice.repository.LikeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -12,27 +15,17 @@ public class LikeService {
     @Autowired
     private LikeRepository likeRepository;
 
-    public List<Like> getLike() {
-        return likeRepository.findAll();
+
+    public List<Like> likesPage(String postOrCommentId, int page, int pageSize) {
+        Pageable firstPage = PageRequest.of(page, pageSize);
+        List<Like> allLikes=likeRepository.findBypostorcommentID(postOrCommentId,firstPage);
+        return  allLikes;
     }
 
-    public Like saveLike(Like like) {
+    public Like likeCreate(Like like, String postOrCommentId) {
+        like.setPostorcommentID(postOrCommentId);
+        like.setCreatedAt(LocalDateTime.now());
         return likeRepository.save(like);
     }
-
-    public Object getAllDataById(String id) {
-        return likeRepository.findById(id).get();
-    }
-
-
-    public void deleteLike(String id) {
-        likeRepository.deleteById(id);
-    }
-
-    public Long getLikesCount(String id) {
-        Long count=likeRepository.countById(id);
-        return count;
-    }
-
 
 }

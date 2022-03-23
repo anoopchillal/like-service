@@ -1,6 +1,7 @@
 package com.example.likeservice.repository;
 
 import com.example.likeservice.entity.Like;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Collection;
@@ -10,4 +11,6 @@ public interface LikeRepository extends MongoRepository<Like, String> {
 
 
     Long countById(String id);
+
+    public List<Like> findBypostorcommentID(String postOrCommentId, Pageable firstPage);
 }
