@@ -44,4 +44,9 @@ public class LikeController {
         return new ResponseEntity<>(likeService.deleteLikeID(likeId), HttpStatus.ACCEPTED);
     }
 
+    @GetMapping("/postsOrComments/{postOrCommentId}/likes/count")
+    public ResponseEntity<Integer> countLikes(@PathVariable("postOrCommentId") String postOrCommentId){
+        return new ResponseEntity<>(likeService.countLikes(postOrCommentId), HttpStatus.ACCEPTED);
+    }
+
 }

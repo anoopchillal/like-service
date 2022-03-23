@@ -36,4 +36,15 @@ public class LikeService {
         likeRepository.deleteById(likeId);
         return "Deleted  "+likeId+" successfully";
     }
+
+    public int countLikes(String postOrCommentId) {
+        List<Like> allData=likeRepository.findAll();
+        int count=0;
+        for(Like like:allData){
+            if(like.getPostorcommentID().equals(postOrCommentId)){
+                count++;
+            }
+        }
+        return count;
+    }
 }
