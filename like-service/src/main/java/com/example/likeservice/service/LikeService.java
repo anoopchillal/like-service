@@ -28,4 +28,7 @@ public class LikeService {
         return likeRepository.save(like);
     }
 
+    public Like likeDetailsByID(String likeId) {
+        return likeRepository.findById(likeId).get();
+    }
 }
