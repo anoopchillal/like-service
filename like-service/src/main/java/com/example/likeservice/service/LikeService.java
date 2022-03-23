@@ -31,4 +31,9 @@ public class LikeService {
     public Like likeDetailsByID(String likeId) {
         return likeRepository.findById(likeId).get();
     }
+
+    public String deleteLikeID(String likeId) {
+        likeRepository.deleteById(likeId);
+        return "Deleted  "+likeId+" successfully";
+    }
 }
