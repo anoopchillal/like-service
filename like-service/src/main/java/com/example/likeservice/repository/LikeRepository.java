@@ -9,8 +9,6 @@ import java.util.List;
 
 public interface LikeRepository extends MongoRepository<Like, String> {
 
-
-    Long countById(String id);
-
     public List<Like> findBypostorcommentID(String postOrCommentId, Pageable firstPage);
+
 }

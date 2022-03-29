@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class LikeService {
     @Autowired
-    private LikeRepository likeRepository;
+    LikeRepository likeRepository;
 
 
     public List<Like> likesPage(String postOrCommentId, int page, int pageSize) {
@@ -28,7 +28,8 @@ public class LikeService {
         return likeRepository.save(like);
     }
 
-    public Like likeDetailsByID(String likeId) {
+
+    public Like likeDetailsByID(String postOrCommentId,String likeId) {
         return likeRepository.findById(likeId).get();
     }
 

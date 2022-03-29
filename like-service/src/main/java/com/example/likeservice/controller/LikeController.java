@@ -1,5 +1,6 @@
 package com.example.likeservice.controller;
 
+
 import com.example.likeservice.entity.Like;
 import com.example.likeservice.service.LikeService;
 import org.slf4j.Logger;
@@ -16,35 +17,35 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/likes")
+@RequestMapping("/postsOrComments")
 public class LikeController {
 
     private static Logger log = LoggerFactory.getLogger(LikeController.class);
 
     @Autowired
-    private LikeService likeService;
+    LikeService likeService;
 
-    @GetMapping("/postsOrComments/{postOrCommentId}/likes")
+    @GetMapping("/{postOrCommentId}/likes")
     public ResponseEntity<List<Like>> likesPage(@PathVariable("postOrCommentId") String postOrCommentId, @QueryParam("page") int page, @QueryParam("pageSize") int pageSize){
         return new ResponseEntity<>(likeService.likesPage(postOrCommentId,page,pageSize), HttpStatus.ACCEPTED);
     }
 
-    @PostMapping("/postsOrComments/{postOrCommentId}/likes")
+    @PostMapping("/{postOrCommentId}/likes")
     public ResponseEntity<Like> likeCreate(@PathVariable("postOrCommentId") String postOrCommentId, @RequestBody @Valid Like like){
         return new ResponseEntity<>(likeService.likeCreate(like,postOrCommentId), HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/postsOrComments/{postOrCommentId}/likes/{likeId}")
-    public ResponseEntity<Like> likeDetailsByID(@PathVariable("likeId") String Id, @PathVariable("postOrCommentId") String postOrCommentId) {
-        return new ResponseEntity<>(likeService.likeDetailsByID(Id), HttpStatus.ACCEPTED);
+    @GetMapping("/{postOrCommentId}/likes/{likeId}")
+    public ResponseEntity<Like> likeDetailsByID(@PathVariable("likeId") String likeId, @PathVariable("postOrCommentId") String postOrCommentId) {
+        return new ResponseEntity<>(likeService.likeDetailsByID(postOrCommentId,likeId), HttpStatus.ACCEPTED);
     }
 
-    @DeleteMapping("/postsOrComments/{postOrCommentId}/likes/{likeId}")
+    @DeleteMapping("/{postOrCommentId}/likes/{likeId}")
     public ResponseEntity<String> deleteLikeID(@PathVariable("likeId") String likeId, @PathVariable("postOrCommentId") String postOrCommentId ) {
         return new ResponseEntity<>(likeService.deleteLikeID(likeId), HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/postsOrComments/{postOrCommentId}/likes/count")
+    @GetMapping("/{postOrCommentId}/likes/count")
     public ResponseEntity<Integer> countLikes(@PathVariable("postOrCommentId") String postOrCommentId){
         return new ResponseEntity<>(likeService.countLikes(postOrCommentId), HttpStatus.ACCEPTED);
     }

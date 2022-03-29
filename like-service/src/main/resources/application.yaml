@@ -1,12 +1,7 @@
 eureka:
   client:
-    serviceUrl:
-      register-with-eureka: true
-      fetch-registry: true
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    preferIpAddress: true
-    hostname: localhost
+    service-url:
+      defaultZone: ${eureka_url:http://172.17.0.3:8761/eureka}
 spring:
   application:
     name: like-service
@@ -17,5 +12,16 @@ spring:
     mongodb:
       database: like_db
       port: 27017
+      host: host.docker.internal
 server:
   port: 3020
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+    endpoint:
+      health:
+        show-details: always
